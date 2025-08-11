@@ -18,7 +18,7 @@ class Image extends Model
     {
         static::deleting(function (Image $image) {
             if ($image->path && $image->path !== '') {
-                Storage::disk('public')->delete($image->preview);
+                Storage::disk('public')->delete($image->path);
             }
         });
     }
